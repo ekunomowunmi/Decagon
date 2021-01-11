@@ -1,0 +1,42 @@
+.hello{
+  font-weight: 20;
+  font-size: 49px;
+
+}
+
+.name{
+  font-size:37px;
+}
+
+.header-font{
+  font-size: xx-large;
+  color:white;
+}
+.search{
+  width:100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color:grey;
+  padding:2px;
+  margin-bottom:15px;
+  // background:transparent;
+  // border: 1px solid #ddd;
+  // background-image: url('images/transparent-square.png');
+  // background-size: 20px 20px;
+  // background-position: 95% center;
+  // background-repeat: no-repeat;
+  // margin-top:15px;
+  // padding:7px;
+  // transition: width 0.4s ease-in-out;
+}
+
+.absolute-center{
+  margin:auto;
+  position: absolute;
+  top:0;left:0;bottom: 0;right:0
+}
+
+.top-30{
+
+  margin-top:30%;
+}
