@@ -1,0 +1,65 @@
+<div class="p-4 color-navy font-weight-bold">
+  <h2>All Users</h2>
+  <span class="opacity-50 font-small ">Filter By</span>
+<div class="row mt-1">
+  <div class="col-md-5 col-sm-5">
+    <div class = "">
+      <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+
+        <input type="text" class="form-control search-users round-border" name="searchParam" placeholder="Find in List" [(ngModel)]="searchParam" >
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-4">
+    <div class="btn-group" mdbDropdown>
+      <button mdbDropdownToggle type="button" size="sm" mdbBtn color="primary" class="semi-round-border dropdown-toggle waves-light"
+        mdbWavesEffect>
+        Country List
+      </button>
+
+      <div class="dropdown-menu dropdown-primary">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="divider dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-3">
+   <!-- Default switch -->
+<div class="custom-control custom-switch p-2">
+  <input type="checkbox" class="custom-control-input" id="customSwitches">
+  <label class="custom-control-label" for="customSwitches">Show Country</label>
+</div>
+  </div>
+</div>
+<div class="card semi-round-border my-4" *ngFor="let user of users">
+  <div class="row p-2">
+    <div class="col-md-2 col-sm-2 text-center mt-3">
+      <img [src]="user.picture.thumbnail" class="thumbnail-image"/>
+    </div>
+    <div class="col-md-8 col-sm-8">
+      <strong>{{user.name.title}} {{user.name.first}} {{user.name.last}}</strong><br/>
+      <p class="opacity-50">{{user.location.street.number}} {{user.location.street.name}}, {{user.location.city}}
+         {{user.location.state}}</p>
+      <p class="opacity-50"><span> <mdb-icon fas icon="envelope" ></mdb-icon> {{user.email}}</span>&nbsp;&nbsp;
+        <span><mdb-icon fas icon="phone-alt"></mdb-icon> {{user.phone}}</span></p>
+
+    </div>
+    <div class="col-md-2 col-sm-2">
+      <div class="iconBox text-center">
+        <mdb-icon fas icon="arrow-right"></mdb-icon>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<div class="text-center">
+    <a mdbBtn size="sm" color="cyan" (click)="prevPage()" [attr.disabled]="page == 1" [class.disabled]="page == 1"><mdb-icon fas icon="arrow-left"></mdb-icon></a>
+    <a mdbBtn size="sm" color="cyan" (click)="nextPage()"><mdb-icon fas icon="arrow-right"></mdb-icon></a>
+</div>
+
+</div>
