@@ -1,3 +1,4 @@
+<div class="animate__animated animate__backInRight card light-grey-background round-border  mt-2">
 <div class="p-4 color-navy font-weight-bold">
   <h2>Male Users</h2>
   <span class="opacity-50 font-small ">Filter By</span>
@@ -6,7 +7,7 @@
     <div class = "">
       <div class="form-group has-search">
         <span class="fa fa-search form-control-feedback"></span>
-        <input type="text" class="form-control search-users round-border" placeholder="Find in List">
+        <input type="text" class="form-control search-users round-border" name="searchParam" placeholder="Find in List" [(ngModel)]="searchParam" (keyup.enter)="searchUser(searchParam)">
       </div>
     </div>
   </div>
@@ -34,7 +35,7 @@
 </div>
   </div>
 </div>
-<div class="card semi-round-border my-4" *ngFor="let user of maleUsers">
+<div class="card semi-round-border my-4 animate__animated animate__backInRight" *ngFor="let user of maleUsers">
   <div class="row p-2">
     <div class="col-md-2 col-sm-2 text-center mt-3">
       <img [src]="user.picture.thumbnail" class="thumbnail-image"/>
@@ -61,4 +62,5 @@
     <a mdbBtn size="sm" color="cyan" (click)="nextPage()"><mdb-icon fas icon="arrow-right"></mdb-icon></a>
 </div>
 
+</div>
 </div>
