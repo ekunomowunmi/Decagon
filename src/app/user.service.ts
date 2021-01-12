@@ -49,4 +49,7 @@ export class UserService {
       );
     }
   }
+  downloadPage():Observable<any>{
+    return this.http.get<any>(`https://randomuser.me/api/?results=5&inc=name,gender,nat&noinfo`)
+  }
 }
