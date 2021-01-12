@@ -89,9 +89,9 @@
 
     </div>
     <div class="col-md-6">
-      <div class="card light-grey-background round-border  mt-2">
-        <router-outlet></router-outlet>
-        </div>
+        <div [@routeAnimations]="prepareRoute(outlet)">
+          <router-outlet #outlet="outlet"></router-outlet>
+          </div>
     </div>
   </div>
 

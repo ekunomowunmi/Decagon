@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import {IconsModule, DropdownModule, ButtonsModule, WavesModule, CollapseModule} from 'angular-bootstrap-md';
 
@@ -10,6 +11,7 @@ import { MaleUsersComponent } from './male-users/male-users.component';
 import { FemaleUsersComponent } from './female-users/female-users.component';
 import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NguiInviewModule } from '@ngui/common';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     IconsModule,
     HttpClientModule,
@@ -27,10 +30,12 @@ import { HttpClientModule } from '@angular/common/http';
     ButtonsModule.forRoot(),
     WavesModule.forRoot(),
     CollapseModule.forRoot(),
-    DropdownModule.forRoot()
+    DropdownModule.forRoot(),
+    NguiInviewModule
 
   ],
   providers: [UserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
