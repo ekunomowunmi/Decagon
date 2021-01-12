@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { ButtonsModule, CollapseModule, DropdownModule, IconsModule, WavesModule } from 'angular-bootstrap-md';
 
 import { FemaleUsersComponent } from './female-users.component';
 
@@ -8,6 +11,14 @@ describe('FemaleUsersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormsModule, HttpClientModule,
+        IconsModule,
+        ButtonsModule.forRoot(),
+    WavesModule.forRoot(),
+    CollapseModule.forRoot(),
+    DropdownModule.forRoot()
+      ],
       declarations: [ FemaleUsersComponent ]
     })
     .compileComponents();
