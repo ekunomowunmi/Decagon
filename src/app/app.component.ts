@@ -10,6 +10,7 @@ import { slideInAnimation } from './animation';
 })
 export class AppComponent {
   title = 'Decagon';
+  allUser = 'all-users';
 
   prepareRoute(outlet: RouterOutlet){
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;

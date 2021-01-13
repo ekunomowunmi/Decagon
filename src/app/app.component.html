@@ -53,25 +53,25 @@
              <div class="">
                <div class="pl-5 ml-4">
                 <div class="py-3 pl-4 -text font-weight-bold color-white">Show Users </div>
-                <div class="row ml-3">
-                  <span>
-                    <a routerLink = "/all-users">
-                      <button mdbBtn type="button" color="pink" mdbWavesEffect>
+                <div class="row ml-3 d-flex">
+                  <span class="mx-2">
+                    <a routerLink = "/all-users" (click)="allUser = 'all-users'">
+                      <button mdbBtn type="button" color="pink" mdbWavesEffect [ngClass]="(allUser == 'all-users') ? 'button-grow-2':''">
                         <mdb-icon fas icon="users" size="2x"></mdb-icon>
                       </button>
                     </a>
                    </span>
-                  <span>
-                    <a routerLink = "/male-users">
-                      <button mdbBtn type="button" color="cyan" mdbWavesEffect>
+                  <span class="mx-2">
+                    <a routerLink = "/male-users" (click)="allUser = 'male-users'">
+                      <button mdbBtn type="button" color="cyan" mdbWavesEffect [ngClass]="(allUser == 'male-users') ? 'button-grow-2':''">
                         <mdb-icon fas icon="male" size="2x"></mdb-icon>
                       </button>
                     </a>
 
                    </span>
-                  <span>
-                    <a routerLink = "/female-users">
-                      <button mdbBtn type="button" color="purple" mdbWavesEffect>
+                  <span class="mx-2">
+                    <a routerLink = "/female-users" (click)="allUser = 'female-users'">
+                      <button mdbBtn type="button" color="purple" mdbWavesEffect [ngClass]="(allUser == 'female-users') ? 'button-grow-2':''">
                         <mdb-icon fas icon="female" size="2x"></mdb-icon>
                       </button>
                     </a>
@@ -89,8 +89,8 @@
 
     </div>
     <div class="col-md-6">
-        <div [@routeAnimations]="prepareRoute(outlet)">
-          <router-outlet #outlet="outlet"></router-outlet>
+        <div >
+          <router-outlet></router-outlet>
           </div>
     </div>
   </div>

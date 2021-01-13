@@ -40,3 +40,15 @@
 
   margin-top:30%;
 }
+
+.btn-transition{
+  transition-property: width;
+  transition-duration: 2s;
+}
+
+.button-grow-2{
+  width: 103% !important;
+  // transition-property: width;
+  // transition-duration: 2s;
+  // background-color: green !important;
+}
