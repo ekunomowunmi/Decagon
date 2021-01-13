@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  private rsSelectedUser = new BehaviorSubject<any>(null);
+  selectedUser = this.rsSelectedUser.asObservable();
+
   constructor(private http:HttpClient) {
 
+  }
+
+  updateSelectedUser(user: any) {
+    this.rsSelectedUser.next(user);
   }
 
   getAllUsers(page) :Observable<any>{
