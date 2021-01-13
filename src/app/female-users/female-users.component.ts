@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import {Country, countries, continents} from 'countries-list';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,12 +15,16 @@ export class FemaleUsersComponent implements OnInit {
   page: number = 1;
   usersCopy: any[] = [];
   searchParam:string = "";
+  searchCountryParam = "";
+  showCountry = false;
+  closeDd = false;
   countryList: Country[];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router:Router) { }
 
   ngOnInit() {
   this.getUsers(this.page);
+  this.countryList = Object.values(countries);
   }
   getUsers(page){
     this.userService.getFemaleUsers(page).
@@ -101,5 +106,9 @@ export class FemaleUsersComponent implements OnInit {
     downloadLink.click();
   }
 
+  goToDetail(user){
+    this.userService.updateSelectedUser(user);
+    this.router.navigate(["/user-details"]);
+  }
 
 }

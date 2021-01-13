@@ -3,7 +3,7 @@ import { MdbTablePaginationComponent } from 'angular-bootstrap-md';
 import { UserService } from '../user.service';
 import {Country, countries, continents} from 'countries-list';
 import { Route } from '@angular/compiler/src/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-users',
@@ -23,7 +23,7 @@ export class AllUsersComponent implements OnInit {
   usersCopy: any[] = [];
   countryList = [];
   userPage: string;
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router:Router) {
     // this.userPage = this.route.snapshot.queryParamMap.get('all');
     // console.log(this.userPage);
   }
@@ -113,4 +113,8 @@ export class AllUsersComponent implements OnInit {
     downloadLink.click();
   }
 
+  goToDetail(user){
+    this.userService.updateSelectedUser(user);
+    this.router.navigate(["/user-details"]);
+  }
 }
