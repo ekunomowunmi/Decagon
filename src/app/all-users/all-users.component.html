@@ -42,32 +42,37 @@
     </div>
   </div>
   <div class="card semi-round-border my-4 animate__animated animate__backInDown" *ngFor="let user of users">
-    <div class="row p-2">
-      <div class="col-md-2 col-sm-2 text-center mt-3">
-        <img [src]="user.picture.thumbnail" class="thumbnail-image"/>
-      </div>
-      <div class="col-md-8 col-sm-8">
-        <strong>{{user.name.title}} {{user.name.first}} {{user.name.last}}</strong><br/>
-        <p class="opacity-50">{{user.location.street.number}} {{user.location.street.name}}, {{user.location.city}}
-           {{user.location.state}}</p>
-        <span *ngIf="showCountry" class=" font-small" >Country: {{user.location.country}}</span>
-        <p class="opacity-50"><span> <mdb-icon fas icon="envelope" ></mdb-icon> {{user.email}}</span>&nbsp;&nbsp;
-          <span><mdb-icon fas icon="phone-alt"></mdb-icon> {{user.phone}}</span></p>
+    <a (click)="goToDetail(user)">
+      <div class="row p-2">
+        <div class="col-md-2 col-sm-2 text-center mt-3">
+          <img [src]="user.picture.thumbnail" class="thumbnail-image"/>
+        </div>
+        <div class="col-md-8 col-sm-8">
+          <strong>{{user.name.title}} {{user.name.first}} {{user.name.last}}</strong><br/>
+          <p class="opacity-50">{{user.location.street.number}} {{user.location.street.name}}, {{user.location.city}}
+             {{user.location.state}}</p>
+          <span *ngIf="showCountry" class=" font-small" >Country: {{user.location.country}}</span>
+          <p class="opacity-50"><span> <mdb-icon fas icon="envelope" ></mdb-icon> {{user.email}}</span>&nbsp;&nbsp;
+            <span><mdb-icon fas icon="phone-alt"></mdb-icon> {{user.phone}}</span></p>
 
-      </div>
-      <div class="col-md-2 col-sm-2">
-        <div class="iconBox text-center">
-          <mdb-icon fas icon="arrow-right"></mdb-icon>
+        </div>
+        <div class="col-md-2 col-sm-2">
+          <div class="iconBox text-center">
+            <mdb-icon fas icon="arrow-right"></mdb-icon>
+          </div>
         </div>
       </div>
-    </div>
-
-
-  </div>
-  <div class="text-center">
-      <a mdbBtn size="sm" color="cyan" (click)="prevPage()" [attr.disabled]="page == 1" [class.disabled]="page == 1"><mdb-icon fas icon="arrow-left"></mdb-icon></a>
-      <a mdbBtn size="sm" color="cyan" (click)="nextPage()"><mdb-icon fas icon="arrow-right"></mdb-icon></a>
+    </a>
   </div>
 
+  <div class="">
+      <button type="button" mdbBtn color="secondary" mdbWavesEffect (click)="downloadPage()">
+        <mdb-icon class="white-text" fas icon="cloud-download-alt"></mdb-icon><span class="white-text font-small capitalize"> Download Results</span></button>
+    <span class="float-right">
+      <a mdbBtn size="sm" color="dark" (click)="prevPage()" [attr.disabled]="page == 1" [class.disabled]="page == 1"><mdb-icon fas icon="arrow-left"></mdb-icon></a>
+      <a mdbBtn size="sm" color="dark" (click)="nextPage()"><mdb-icon fas icon="arrow-right"></mdb-icon></a>
+
+    </span>
+  </div>
   </div>
 </div>
