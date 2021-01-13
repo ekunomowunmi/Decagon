@@ -1,0 +1,80 @@
+<div class="animate__animated animate__backInRight card light-grey-background round-border  mt-2">
+  <div class="p-4 color-navy font-weight-bold">
+    <h2>User List
+      <span class="float-right">
+      <!-- <a (click)="downloadPage()"><mdb-icon class="cyan-text" fas icon="file-download"></mdb-icon></a> -->
+      </span>
+    </h2>
+    <span class="opacity-50 font-small ">Filter By</span>
+  <div class="row mt-1">
+    <div class="col-md-5 col-sm-5">
+      <div class = "">
+        <div class="form-group has-search">
+          <span class="fa fa-search form-control-feedback"></span>
+
+          <input type="text" class="form-control search-users round-border" name="searchParam" placeholder="Find in List" [(ngModel)]="searchParam" (keyup.enter)="searchUser(searchParam)" >
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <div class="btn-group" mdbDropdown [autoClose]="closeDd">
+        <button mdbDropdownToggle type="button" size="sm" mdbBtn color="primary" class="semi-round-border dropdown-toggle waves-light"
+          mdbWavesEffect>
+          Country List
+        </button>
+
+        <div class="dropdown-menu dropdown-primary">
+          <form>
+            <input type="text" class="form-control" name="searchCountryParam" placeholder="Search Countries" [(ngModel)]="searchCountryParam" (keyup)="searchCountry(searchCountryParam)" >
+          </form>
+          <a class="dropdown-item" *ngFor="let country of countryList" href="#" (click)="closeDd = true">country.name</a>
+          <!-- <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a> -->
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-3">
+     <!-- Default switch -->
+  <div class="custom-control custom-switch p-2">
+    <input type="checkbox" class="custom-control-input" id="customSwitches" [(ngModel)]="showCountry">
+    <label class="custom-control-label" for="customSwitches">Show Country</label>
+  </div>
+    </div>
+  </div>
+  <div class="ml-4">
+    <div class="row my-2">
+      <!-- <a  size="sm" color="cyan" ><mdb-icon fas icon="arrow-left"></mdb-icon><span class="grey-text"> RESULTS</span> </a> -->
+    <a size="sm" (click)="goToList()" ><mdb-icon fas icon="arrow-left" class="cyan-text"></mdb-icon> <span class="grey-text ml-3">RESULTS</span></a>
+
+
+    </div>
+      <div class="row p-2">
+        <div class="col-md-5 col-sm-5 text-center mt-3">
+          <img [src]="picture" class="thumbnail-image"/>
+        </div>
+        <div class="col-md-7 col-sm-7">
+          <span class="font-weight-bold">{{title}} {{firstName}} {{lastName}}</span> <span class="font-weight-normal ml-4 font-small">{{age}}</span> <br/>
+          <p class="opacity-50">{{streetNo}} {{streetName}}, {{city}}
+             {{state}}</p>
+          <span *ngIf="showCountry" class=" font-small" >Country: {{country}}</span>
+          <div class="search-users round-border text-center opacity-50 p-1 my-1"><mdb-icon fas icon="envelope" ></mdb-icon> {{email}}</div>
+          <div class="pink accent-1 opacity-50 round-border text-center p-1 mt-4">JOINED: {{dateRegistered | date}}</div>
+          <div class="font-small mt-4"><mdb-icon fas icon="phone-alt" class="grey-text"></mdb-icon><span class="ml-3 color-grey"> {{phoneNum}}</span></div>
+          <div class="font-small mt-4"><mdb-icon fas icon="mobile-alt" class="grey-text"></mdb-icon><span class="ml-4 color-grey">{{phoneNum}}</span></div>
+
+          <!-- <p class="opacity-50"><span> <mdb-icon fas icon="envelope" ></mdb-icon> {{user.email}}</span>&nbsp;&nbsp;
+            <span><mdb-icon fas icon="phone-alt"></mdb-icon> {{user.phone}}</span></p> -->
+
+        </div>
+      </div>
+
+
+
+  </div>
+  <div class="">
+    <button type="button" mdbBtn color="light" mdbWavesEffect (click)="downloadPage()">
+      <mdb-icon class="white-text" fas icon="cloud-download-alt"></mdb-icon><span class="white-text font-small capitalize"> Download Results</span></button>
+  </div>
+
+  </div>
+</div>
