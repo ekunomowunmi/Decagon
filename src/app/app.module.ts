@@ -12,13 +12,15 @@ import { FemaleUsersComponent } from './female-users/female-users.component';
 import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NguiInviewModule } from '@ngui/common';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllUsersComponent,
     MaleUsersComponent,
-    FemaleUsersComponent
+    FemaleUsersComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
