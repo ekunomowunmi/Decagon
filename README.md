@@ -30,3 +30,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## CircleCI Status Badge
 [![ekunomowunmi](https://circleci.com/gh/ekunomowunmi/Decagon.svg?style.svg&circle-token=0dfea163a0635a6e691c0c028c34e59153e1f04d)](https://circleci.com/gh/ekunomowunmi/circleci-docs)
+
+
+## View CircleCI Status Pipeline
+https://app.circleci.com/pipelines/github/ekunomowunmi/Decagon?invite=true
