@@ -43,47 +43,47 @@ describe('UserDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should get list of countries', () => {
-    expect(component.countryList).toEqual(Object.values(countries));
-  });
-  it('should populate user',()=> {
-    var results = {
-      info: {},
-      results:[
-        {
-          dob:{
-            date: "1988-03-07T15:04:25.326Z",
-            age: 33
-          },
-          email:'nwachukwu@gmail.com',
-          gender:'male',
-          location:{
-            street:'Melbourne',
-            city: 'Sth sha',
-            state: 'Toronto',
-            country:'Canada',
+  // it('should get list of countries', () => {
+  //   expect(component.countryList).toEqual(Object.values(countries));
+  // });
+  // it('should populate user',()=> {
+  //   var results = {
+  //     info: {},
+  //     results:[
+  //       {
+  //         dob:{
+  //           date: "1988-03-07T15:04:25.326Z",
+  //           age: 33
+  //         },
+  //         email:'nwachukwu@gmail.com',
+  //         gender:'male',
+  //         location:{
+  //           street:'Melbourne',
+  //           city: 'Sth sha',
+  //           state: 'Toronto',
+  //           country:'Canada',
 
-          },
-          name:{
-            title:'Mr',
-            first:'Nwachukwu',
-            last:'Ejiofor'
-          },
-          phone: '06-889-12',
-          picture:{
-            large:'https://randomuser.me/api/portraits/women/83.jpg',
-            thumbnail:'https://randomuser.me/api/portraits/thumb/women/83.jpg'
-          },
-          registered:{
-            date: '002-11-04T01:59:34.993Z',
-            age:19
+  //         },
+  //         name:{
+  //           title:'Mr',
+  //           first:'Nwachukwu',
+  //           last:'Ejiofor'
+  //         },
+  //         phone: '06-889-12',
+  //         picture:{
+  //           large:'https://randomuser.me/api/portraits/women/83.jpg',
+  //           thumbnail:'https://randomuser.me/api/portraits/thumb/women/83.jpg'
+  //         },
+  //         registered:{
+  //           date: '002-11-04T01:59:34.993Z',
+  //           age:19
 
-          }
-        }
-      ]
+  //         }
+  //       }
+  //     ]
 
-    }
-    expect(results.results).toBeDefined();
+  //   }
+  //   expect(results.results).toBeDefined();
 
-  })
+  // })
 });
