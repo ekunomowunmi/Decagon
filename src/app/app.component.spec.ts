@@ -13,13 +13,10 @@ import { AppModule } from './app.module';
 import { Component, NgModule } from '@angular/core';
 import {Router} from "@angular/router";
 import {Location} from "@angular/common";
-import { RouterLinkDirectiveStub } from 'src/environments/testing/router-link-directive-stub';
 import { BrowserModule } from '@angular/platform-browser';
 import {APP_BASE_HREF} from '@angular/common';
 
 @Component({selector: 'router-outlet', template: ''})
-class RouterOutletStubComponent {
-}
 
 class MockRouter{
   navigateByUrl(url:string){return url;}
