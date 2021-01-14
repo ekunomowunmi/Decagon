@@ -83,6 +83,7 @@ describe('UserDetailComponent', () => {
       ]
 
     }
+    expect(results.results).toBeDefined();
 
   })
 });
