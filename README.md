@@ -34,3 +34,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## View CircleCI Status Pipeline
 https://app.circleci.com/pipelines/github/ekunomowunmi/Decagon?invite=true
+
+##Gist Link
+https://gist.github.com/ekunomowunmi/8fef31a07770005eaab95b65cc5bf017
